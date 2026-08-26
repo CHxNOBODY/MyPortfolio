@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Tokens — mirrored from the Figma file "Khaopun — Portfolio".
+   Palette derives from the original site: #fdf6ea paper, #ff8c00 orange.
+   --------------------------------------------------------------- */
+@theme {
+  --color-paper: #fbf6ec;
+  --color-raised: #f4ede0;
+  --color-ink: #16130e;
+  --color-ink-2: #5c5346;
+  --color-ink-3: #8c8375;
+  --color-on-dark: #f7f1e6;
+  --color-accent: #b4571c;
+  --color-accent-bright: #ff8c00;
+  --color-line-soft: #e4dacacc;
+  --color-line-strong: #cfc2ac;
+
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Fluid ramp: the mobile value is the 390px frame, the max is the 1440px frame. */
+  --text-display-xl: clamp(2.875rem, 6.6vw, 6rem);
+  --text-display-xl--line-height: 0.99;
+  --text-display-xl--letter-spacing: -0.025em;
+
+  --text-display-l: clamp(2.75rem, 4.4vw, 4rem);
+  --text-display-l--line-height: 1.05;
+  --text-display-l--letter-spacing: -0.02em;
+
+  --text-display-m: clamp(2rem, 2.8vw, 2.5rem);
+  --text-display-m--line-height: 1.16;
+  --text-display-m--letter-spacing: -0.015em;
+
+  --text-display-s: clamp(1.375rem, 1.9vw, 1.75rem);
+  --text-display-s--line-height: 1.28;
+  --text-display-s--letter-spacing: -0.01em;
+
+  --text-body-l: clamp(1.0625rem, 1.35vw, 1.25rem);
+  --text-body-l--line-height: 1.68;
+  --text-body-l--letter-spacing: -0.005em;
+
+  --text-body-m: 1rem;
+  --text-body-m--line-height: 1.65;
+
+  --text-meta: clamp(0.6875rem, 0.83vw, 0.75rem);
+  --text-meta--line-height: 1.5;
+  --text-meta--letter-spacing: 0.08em;
+
+  --text-eyebrow: clamp(0.6875rem, 0.9vw, 0.8125rem);
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.12em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-bright);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility shell {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 90rem; /* the 1440 frame */
+  padding-inline: 1.5rem;
+  @media (width >= 48rem) {
+    padding-inline: 3.5rem; /* the 56px gutter from Figma */
+  }
+}
+
+/* One quiet reveal, per the design's "one well-orchestrated reveal" rule. */
+@utility rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
