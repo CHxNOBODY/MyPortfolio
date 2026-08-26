@@ -26,8 +26,7 @@ src/app/page.tsx        section order
 src/components/         Nav, Hero, Work, Projects, Keys, About, Footer
 src/lib/photos.ts       photo captions + crop ratios
 src/lib/github.ts       which repos to feature, and the live GitHub fetch
-public/photos/          web-sized photos (~1600px). Originals: legacy/picture/
-legacy/                 the original hand-written HTML site, kept as-is
+public/photos/          web-sized photos (~1600px)
 ```
 
 ## The projects section
