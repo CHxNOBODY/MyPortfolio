@@ -13,7 +13,6 @@ const FEATURED: { repo: string; title: string; live?: string }[] = [
   },
   { repo: "CS-01418351-Project", title: "KU File Transfer" },
   { repo: "My-Discord-Bot", title: "Discord Bot" },
-  { repo: "CS-01418262", title: "Machine Learning" },
   { repo: "LineBot", title: "LINE Bot" },
   { repo: "Anniversary-4-years", title: "Anniversary" },
 ];
@@ -56,12 +55,6 @@ const FALLBACK: Record<string, Omit<GitHubRepo, "name" | "html_url">> = {
     language: "Python",
     homepage: null,
     pushed_at: "2026-08-20T12:20:15Z",
-  },
-  "CS-01418262": {
-    description: "For Machine Learning Project And Lab.",
-    language: "Jupyter Notebook",
-    homepage: null,
-    pushed_at: "2025-08-01T07:39:54Z",
   },
   LineBot: {
     description: null,
